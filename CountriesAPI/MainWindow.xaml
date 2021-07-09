@@ -1,12 +1,57 @@
-﻿<Window x:Class="CountriesAPI.MainWindow"
+﻿<Window x:Name="countries" x:Class="CountriesAPI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CountriesAPI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Topmost="True">
+        Title="MainWindow" Height="575" Width="900"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#181735">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Left" Height="433" Margin="10,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="430">
+            <Image x:Name="image_source"  Height="192"/>
+            <Label x:Name="lb_status"  Content="Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGray"/>
+            <Label x:Name="lb_result"  Content="Label" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="LightGray" RenderTransformOrigin="0.5,0.5"/>
+            <StackPanel Height="436" Margin="-455,0,0,0"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="443" Margin="10,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="430">
+            <Label Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Please select a country" FontFamily="Verdana" Foreground="LightGray"/>
+            <ComboBox Margin="19,10,0,0" x:Name="cb_country" HorizontalAlignment="Left" VerticalAlignment="Top" Width="377" SelectionChanged="cb_country_SelectionChanged"/>
+
+            <Label Content="Official Name:" Margin="0,5,0,0" FontFamily="Verdana" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label x:Name="lb_name" Content="" FontFamily="Verdana" Foreground="Yellow" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            <Label Content="Capital:" Margin="191,5,184,0" FontFamily="Verdana" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" Width="55"/>
+            <Label x:Name="lb_capital" Content="" FontFamily="Verdana" Foreground="Yellow" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            <Label Content="Region:" Margin="191,5,184,0" FontFamily="Verdana" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" Width="55"/>
+            <Label x:Name="lb_region" Content="" FontFamily="Verdana" Foreground="Yellow" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Content="Sub-Region:" Margin="176,5,167,0" FontFamily="Verdana" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" Width="87"/>
+            <Label x:Name="lb_subregion" Content="" FontFamily="Verdana" Foreground="Yellow" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Label Content="Population:" Margin="176,5,168,0" FontFamily="Verdana" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" Width="86"/>
+            <Label x:Name="lb_population" Content="" FontFamily="Verdana" Foreground="Yellow" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+            <Label Content="Gini Index:" Margin="176,5,167,0" FontFamily="Verdana" Foreground="LightGray" VerticalAlignment="Center" HorizontalAlignment="Center" Width="87"/>
+            <Label x:Name="lb_gini" Content="" FontFamily="Verdana" Foreground="Yellow" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+        </StackPanel>
+
+        <StackPanel x:Name="start" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="500" 
+                    Margin="-5,0,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="895"/>
+
     </Grid>
+
+
+
 </Window>
