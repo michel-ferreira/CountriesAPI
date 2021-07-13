@@ -176,5 +176,13 @@ namespace CountriesAPI
                 }
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to close the app?", "Exit", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
     }
 }
